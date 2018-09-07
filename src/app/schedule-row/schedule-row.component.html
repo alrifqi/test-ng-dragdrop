@@ -1,0 +1,36 @@
+<!--<div droppable (onDrop)="onDrop($event)">-->
+<!--<p>Drop items here</p>-->
+<!--</div>-->
+
+  <div *ngFor="let schedule of schedules; let primaryIndex = index">
+    <label>{{ schedule.name }}</label>
+    <div class="table-schedule__row" *ngFor="let detail of schedule.schedule; let secondaryIndex = index">
+      <div class="item" droppable (onDrop)="onDrop($event, 'firstshift', primaryIndex, secondaryIndex)">{{ detail['firstshift'] }}</div>
+      <div class="item" droppable (onDrop)="onDrop($event, 'secondshift', primaryIndex, secondaryIndex)">{{ detail['secondshift'] }}</div>
+      <div class="item" droppable (onDrop)="onDrop($event, 'thirdshift', primaryIndex, secondaryIndex)">{{ detail['thirdshift'] }}</div>
+      <div class="item" droppable (onDrop)="onDrop($event, 'forthshift', primaryIndex, secondaryIndex)">{{ detail['forthshift'] }}</div>
+    </div>
+
+    <div class="btn__container">
+      <button (click)="addSchedule(primaryIndex, schedule)" class="btn btn-primary">Add</button>
+      <button (click)="showSummary(content, primaryIndex)" class="btn btn-primary">Working Hour Detail</button>
+    </div>
+  </div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Working Hour Detail</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    John: {{ result['John'] }} Hours <br />
+    William: {{ result['William'] }} Hours <br />
+    Michael: {{ result['Michael'] }} Hours <br />
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+  </div>
+</ng-template>
+

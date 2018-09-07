@@ -1,0 +1,26 @@
+.table-schedule__row {
+  display: flex;
+  flex-flow: row
+}
+
+.table-schedule__row > .item {
+  width: 25%;
+  background-color: orange;
+  color: white;
+  font-weight: 400;
+  height: 3vh;
+  margin: 2px;
+  text-align: center;
+  padding: 2px 0px;
+}
+label {
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+.btn__container {
+  display: flex;
+  justify-content: flex-end;
+}
+.btn__container > * {
+  margin: 5px 5px;
+}

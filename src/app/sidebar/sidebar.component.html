@@ -1,0 +1,39 @@
+<!--<ul>-->
+  <!--<li draggable>Coffee</li>-->
+  <!--<li draggable>Tea</li>-->
+  <!--<li draggable>Milk</li>-->
+<!--</ul>-->
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Total Hours</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div draggable class="item" [dragData]="'John'">John</div>
+      </td>
+      <td>
+        {{ persons['John'] }}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div draggable class="item" [dragData]="'William'">William</div>
+      </td>
+      <td>
+        {{ persons.William }}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div draggable class="item" [dragData]="'Michael'">Michael</div>
+      </td>
+      <td>
+        {{ persons.Michael }}
+      </td>
+    </tr>
+  </tbody>
+</table>
